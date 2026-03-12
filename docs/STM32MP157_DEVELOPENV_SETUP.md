@@ -1,4 +1,4 @@
-# STM32MP157 Development Workspace
+# STM32MP157 Development Workspace Setup Guide
 
 **Board**: `STM32MP157F-DK2` | **Ecosystem**: `v6.2.0` | **Host**: `Ubuntu 22.04 (WSL2)`
 
