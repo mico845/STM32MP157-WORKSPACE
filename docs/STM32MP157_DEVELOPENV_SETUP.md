@@ -49,7 +49,55 @@ sudo mv /tmp/mmc_block.conf /etc/modprobe.d/mmc_block.conf
 
 ### Install the SDK
 
-这里编写了 `scripts/install_sdk.sh` 脚本来自动化安装 SDK，执行以下命令即可：
+在根目录下创建 `.env` 文件来定义一些环境变量
+
+一个示例 `.env` 文件的内容：
+```bash
+# --- Workspace root ---
+export MPU_WORKSPACE="${HOME}/stm32mpu_workspace"
+
+
+# --- Board ---
+export MPU_BOARD="stm32mp157f-dk2"
+
+
+# --- SDK package metadata ---
+export MPU_SDK_ARCHIVE="SDK-x86_64-stm32mp1-openstlinux-6.6-yocto-scarthgap-mpu-v26.02.18.tar.gz"
+export MPU_SDK_EXTRACT_DIRNAME="stm32mp1-openstlinux-6.6-yocto-scarthgap-mpu-v26.02.18"
+export MPU_SDK_INSTALLER_NAME="st-image-weston-openstlinux-weston-stm32mp1.rootfs-x86_64-toolchain-5.0.15-openstlinux-6.6-yocto-scarthgap-mpu-v26.02.18.sh"
+
+
+# --- Ecosystem paths ---
+export MPU_ECOSYSTEM_DIR="${MPU_WORKSPACE}/ecosystem"
+export MPU_DEVPKG_DIR="${MPU_ECOSYSTEM_DIR}/developer-package"
+export MPU_SDK_DIR="${MPU_DEVPKG_DIR}/sdk"
+export MPU_SOURCE_DIR="${MPU_DEVPKG_DIR}/source"
+
+
+# --- SDK environment setup file ---
+export MPU_SDK_ENV_SETUP="${MPU_SDK_DIR}/environment-setup-cortexa7t2hf-neon-vfpv4-ostl-linux-gnueabi"
+
+
+# --- Custom paths ---
+export MPU_SCRIPTS_DIR="${MPU_WORKSPACE}/scripts"
+export MPU_PROJECTS_DIR="${MPU_WORKSPACE}/projects"
+export MPU_DOWNLOADS_DIR="${MPU_WORKSPACE}/downloads"
+export MPU_TMP_DIR="${MPU_WORKSPACE}/tmp"
+export MPU_DOCS_DIR="${MPU_WORKSPACE}/docs"
+
+export MPU_BUILD_DIR="${MPU_WORKSPACE}/build"
+export MPU_DEPLOY_DIR="${MPU_WORKSPACE}/output"
+
+# --- Target board network ---
+export MPU_TARGET_IP="192.168.2.143"
+export MPU_TARGET_USER="root"
+
+
+# --- Optional deployment defaults ---
+export MPU_TARGET_DEPLOY_DIR="/usr/local/bin"
+```
+
+使用脚本 `scripts/install_sdk.sh` 来自动化安装 SDK，执行以下命令即可：
 
 ```bash
 ./scripts/install_sdk.sh
