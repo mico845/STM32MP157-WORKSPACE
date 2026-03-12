@@ -1,7 +1,19 @@
-STM32MPU-Ecosystem-*/
+
+.env
+
+
 tmp/
 build/
 output/
 
 
-.env
+downloads/
+
+
+ecosystem/developer-package/sdk/
+ecosystem/developer-package/source/*
+
+# Future
+projects/*
+!projects/.gitkeep
+
