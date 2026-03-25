@@ -2,6 +2,21 @@
 
 **Board**: `STM32MP157F-DK2` | **Ecosystem**: `v6.2.0` | **Host**: `Ubuntu 22.04 (WSL2)`
 
+- [STM32MP157 Development Workspace Setup Guide](#stm32mp157-development-workspace-setup-guide)
+  - [Quick Start](#quick-start)
+    - [Flash the Starter Package on the board](#flash-the-starter-package-on-the-board)
+    - [Host computer configuration](#host-computer-configuration)
+    - [Install the SDK](#install-the-sdk)
+    - [Start the SDK up](#start-the-sdk-up)
+  - [Develop](#develop)
+    - [Install the OpenSTLinux BSP packages](#install-the-openstlinux-bsp-packages)
+    - [Deploy the OpensSTLinux BSP packages using SDK-info utilities](#deploy-the-opensstlinux-bsp-packages-using-sdk-info-utilities)
+    - [Deploy kernel to board](#deploy-kernel-to-board)
+    - [Modify the kernel source code](#modify-the-kernel-source-code)
+  - [Structure](#structure)
+  - [References](#references)
+
+
 ## Quick Start
 
 ### Flash the Starter Package on the board
